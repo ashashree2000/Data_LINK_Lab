@@ -19,7 +19,8 @@ This repository hosts a data pipeline that automates the process of monitoring r
 The project's folder structure is organized as follows:
 
 - `dll_data_cleaningand_aqlite.py`: This file contains python scripts for data cleaning and to store the processed data in a SQLite database.
-- `dll_pipeline.py`: This file contains python script for defining the tasks within the data pipeline.
+- `dll_pipeline.py`: This file contains python script for defining the tasks within the data pipeline through prefect.
+- 'airflowscripts.py' : this file contain scripts for setting up the pipeline using airflow.
 - `dll_records.xls`: Excel spreadsheet for the collected data in spreadsheet format.
 - `data.db`: SQLite database file.
 - `README.md` : This documentation file.
@@ -30,6 +31,7 @@ Snippets folder contains some screenshot of code execution
 - pandas
 - sqlite3
 - prefect
+- apache-airflow
 
 
 ### Running Python Scripts on Google Colab
@@ -46,5 +48,34 @@ Snippets folder contains some screenshot of code execution
 ### Using the SQLite Database
 
 A SQLite database file will automatically get formed once the 2 code blocks of sqlite connections are runned
+
+
+### Running the prefect Scripts
+
+run the below steps in the terminal:
+
+!pip install prefect
+
+import prefect
+
+-Define and Run Prefect Flows:
+Those scripts are added in the dll_pipeline.py file itself
+
+
+### Running the airflow Scripts
+
+Since Apache Airflow is based manages pipelines using DAGs, below are some steps to be run apache-airflow :
+
+!pip install apache-airflow
+
+-initialize the database with the following command:
+!airflow db init
+
+-Start the airflow and Schedular
+!airflow webserver --port 8080
+!airflow scheduler
+
+
+
 
 
