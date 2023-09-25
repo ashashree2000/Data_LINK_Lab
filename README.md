@@ -18,55 +18,33 @@ This repository hosts a data pipeline that automates the process of monitoring r
 
 The project's folder structure is organized as follows:
 
-- `dll_data_cleaningand_aqlite.py`: This script contains .
-- `python_script_2.py`: Description of what this script does.
-- `data.xlsx`: Excel spreadsheet in spreadsheet format.
+- `dll_data_cleaningand_aqlite.py`: This file contains python scripts for data cleaning and to store the processed data in a SQLite database.
+- `dll_pipeline.py`: This file contains python script for defining the tasks within the data pipeline.
+- `dll_records.xls`: Excel spreadsheet for the collected data in spreadsheet format.
 - `data.db`: SQLite database file.
-
-
- - `data_collection.py` : Web scraping script to collect data.
-  - `data_cleaning.py` : Data cleaning and preprocessing script.
-  - `data_storage.py` : Script to store cleaned data in an SQLite database.
-- `docs/` : Documentation folder.
-  - `README.md` : This documentation file.
-- `data/` : Data folder.
-  - `cleaned_data.csv` : Cleaned data in CSV format.
-- `your_database.db` : SQLite database file.
-- `README.md` : Repository-wide README file.
+- `README.md` : This documentation file.
+Snippets folder contains some screenshot of code execution
 
 ## Dependencies
 
-List any external libraries or packages that your Python scripts depend on. Include installation instructions if needed.
+- pandas
+- sqlite3
+- prefect
 
-- Library1 (e.g., pandas)
-- Library2 (e.g., matplotlib)
-
-You can also mention any versions of these libraries that are known to work with your project.
-
-## Usage
-
-Explain how to use your project, including any setup or configuration steps. If your Python scripts are meant to be run on Google Colab, provide instructions on how to do so. You can also provide code examples.
 
 ### Running Python Scripts on Google Colab
 
 1. Open Google Colab.
-2. Upload the Python scripts (`python_script_1.py` and `python_script_2.py`) to your Colab workspace.
+2. Upload the Python scripts (`dll_data_cleaningand_aqlite.py` and `dll_pipeline.py`) to your Colab workspace.
 3. Open each script in Colab and follow the instructions within the script comments.
 
 ### Using the Excel Spreadsheet
 
-Describe how to use the data from `data.xlsx`. Provide examples or code snippets if necessary.
+- Upload the dll_records.xls folder in google collab 
+
 
 ### Using the SQLite Database
 
-Explain how to interact with the SQLite database `data.db`. Provide code examples for common database operations.
+A SQLite database file will automatically get formed once the 2 code blocks of sqlite connections are runned
 
-## Contributing
 
-If you welcome contributions to your project, provide guidelines for how users can contribute. Include information about issues, pull requests, and coding standards.
-
-## License
-
-Specify the license under which your project is released. For example, you can use the MIT License, Apache License, or another open-source license.
-
-[License](LICENSE.txt)
