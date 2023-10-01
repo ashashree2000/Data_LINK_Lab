@@ -19,10 +19,11 @@ from selenium.webdriver.support import expected_conditions as EC
 
 url = "https://himkosh.nic.in/eHPOLTIS/PublicReports/wfrmBudgetAllocationbyFD.aspx"
 
-
+#webdriver instance
 driver = webdriver.Chrome()
 driver.get(url)
 
+#Send an HTTP GET request to the website
 response = requests.get(url)
 content = response.content
 
@@ -53,19 +54,20 @@ submit_button.click()
 
 time.sleep(5)
 
+# Parse the HTML content using Beautiful Soup
 soup = BeautifulSoup(content, 'html.parser')
 
 
 table = soup.find('table')
 
-
+# Extract data from the table into a list of lists
 data = []
 for row in table.find_all('td'):
     cols = row.find_all('td')
     cols = [col.text.strip() for col in cols]
     data.append(cols)
 
-
+# Convert the data into a Pandas DataFrame
 df = pd.DataFrame(data)
 print(data)
 driver.get(url)
