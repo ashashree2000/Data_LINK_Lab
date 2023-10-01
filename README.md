@@ -18,6 +18,7 @@ This repository hosts a data pipeline that automates the process of monitoring r
 
 The project's folder structure is organized as follows:
 
+- `sscrape.py`: This file contains python scripts to scrape the data from the URL: https://himkosh.nic.in/eHPOLTIS/PublicReports/wfrmBudgetAllocationbyFD.aspx
 - `dll_data_cleaningand_aqlite.py`: This file contains python scripts for data cleaning and to store the processed data in a SQLite database.
 - `dll_pipeline.py`: This file contains python script for defining the tasks within the data pipeline through prefect.
 - 'airflowscripts.py' : this file contain scripts for setting up the pipeline using airflow.
@@ -28,10 +29,14 @@ Snippets folder contains some screenshot of code execution
 
 ## Dependencies
 
+- selenium
+- beautifulSoup
 - pandas
 - sqlite3
 - prefect
 - apache-airflow
+
+- web driver (as per the browser used)
 
 
 ### Running Python Scripts on Google Colab
